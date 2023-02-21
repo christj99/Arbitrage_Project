@@ -142,8 +142,12 @@ def main():
 
         full_book = expand_books(bookmake)
 
+        # merging flattened dictionaries with the games on id
+        
         full_up = pd.merge(games,full_book, on='id')
 
+        # arbitrage calculations
+        
         arb_full = arbitrage(full_up, winnings)
 
         if num == 0:
